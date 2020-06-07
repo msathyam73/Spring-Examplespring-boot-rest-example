@@ -4,6 +4,7 @@ pipeline {
         stage('Build Appplication') {
             steps {
               sh 'mvn -f pom.xml clean package'
+			  echo 'packaging completed'
             }
       
          post{
