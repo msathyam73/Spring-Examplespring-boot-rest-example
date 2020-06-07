@@ -3,8 +3,6 @@ pipeline {
     stages {
         stage('Build Appplication') {
             steps {
-			
-			 PATH='E:\softwares\apache-maven-3.6.3\bin'
 				bat 'echo %M2_HOME%'
 				bat 'echo %PATH%'
               bat 'mvn -f pom.xml clean package'
