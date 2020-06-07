@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Appplication') {
             steps {
-              sh 'mvn clean package'
+              sh 'mvn -f Spring-Examplespring-boot-rest-example/pom.xml clean package'
             }
       
          post{
