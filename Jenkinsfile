@@ -5,7 +5,7 @@ pipeline {
             steps {
 				bat 'echo %M2_HOME%'
 				bat 'echo %PATH%'
-               'mvn.bat -f pom.xml clean package'
+              bat mvn -f pom.xml clean package
 			  echo 'packaging completed'
             }
       
