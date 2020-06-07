@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('Build Appplication') {
             steps {
-				bat 'echo %M2_HOME%'
-				bat 'echo %PATH%'
-              bat mvn -f pom.xml clean 
+			
+              bat 'mvn clean package' 
 			  echo 'packaging completed'
             }
       
