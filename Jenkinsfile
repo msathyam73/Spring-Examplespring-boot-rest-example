@@ -6,7 +6,7 @@ pipeline {
               sh 'mvn clean package'
             }
       
-         post('Buid'){
+         post{
 			success{
 						echo 'Now archiving the artifact'
 						archiveArtifacts artifacts: '**/*.jar'
