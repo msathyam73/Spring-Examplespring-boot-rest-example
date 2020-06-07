@@ -4,7 +4,7 @@ pipeline {
         stage('Build Appplication') {
             steps {
 			 bat 'echo %PATH%'
-			 bat 'echo %M2_HOME%'
+			
               bat 'mvn -f pom.xml clean package'
 			  echo 'packaging completed'
             }
