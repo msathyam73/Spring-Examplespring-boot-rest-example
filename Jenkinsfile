@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Appplication') {
             steps {
-              bat 'mvn -f pom.xml clean package'
+              bat ""C:\maven\apache-maven-3.3.9\bin\mvn.exe" -f pom.xml clean package"
 			  echo 'packaging completed'
             }
       
