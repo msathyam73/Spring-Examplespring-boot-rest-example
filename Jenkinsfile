@@ -1,22 +1,18 @@
 pipeline {
     agent any
     stages {
-        stage('Init') {
+        stage('Build Appplication') {
             steps {
-                echo 'Hi, this is Sathyam from Init'
-		echo 'We are starting the Testing'
+              sh 'maven clean package'
             }
-        }
-         stage('Buid'){
-	    steps{
-                   echo 'Bulding Sample Maven Project'
-		}
-        }
-	stage('Deploy'){
-	     steps{
-                    echo 'Deploying in stagging Area'
+      
+         post('Buid'){
+			success{
+						echo 'Now archiving the artifact'
+						archiveArtifacts artifacts: '**/*.jar'
 		}
 	}
- }
 
+	}
+	}
 }
