@@ -1,20 +1,26 @@
 pipeline {
-    agent any
-    stages {
-        stage('Build Appplication') {
-            steps {
-			
-              bat 'mvn clean package' 
-			  echo 'packaging completed'
+      agent any
+      stages {
+            stage('Init') {
+                  steps {
+                        echo 'Hi, this is Anshul from LevelUp360'
+                        echo 'We are Starting the Testing'
+                  }
             }
-      
-         post{
-			success{
-						echo 'Now archiving the artifact'
-						archiveArtifacts artifacts: '**/*.jar'
-		}
-	}
-
-	}
-	}
+            stage('Build') {
+                  steps {
+                        echo 'Building Sample Maven Project'
+                  }
+            }
+            stage('Deploy') {
+                  steps {
+                        echo "Deploying in Staging Area"
+                  }
+            }
+            stage('Deploy Production') {
+                  steps {
+                        echo "Deploying in Production Area"
+                  }
+            }
+      }
 }
