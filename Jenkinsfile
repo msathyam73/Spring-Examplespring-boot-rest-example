@@ -13,8 +13,12 @@ pipeline {
             }
         }
  
-        Stage('Create Tomcat Docker Image'){
+        stage('Create Tomcat Docker Image'){
             steps {
+				
+				sh "pwd"
+				sh "ls -a"
+				sh "sudo usermod -S -G docker ubuntu"
                 sh "docker build . -t spring-boot-rest-example:${env.BUILD_ID}"
             }
         }
