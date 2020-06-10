@@ -17,7 +17,7 @@ pipeline {
             steps {
 				sh "pwd"
 				sh "ls -a"
-				sh "sudo usermod -s -G docker ubuntu"
+				sh "sudo usermod -S -G docker ubuntu"
                 sh "docker build . -t spring-boot-rest-example:${env.BUILD_ID}"
             }
         }
